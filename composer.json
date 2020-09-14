@@ -1,0 +1,51 @@
+{
+    "name": "mtownsend/progress",
+    "description": "A PHP package to determine steps and progress.",
+    "keywords": [
+        "progress",
+        "progression",
+        "bar",
+        "complete",
+        "remaining",
+        "percent",
+        "step",
+        "steps",
+        "completion"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark Townsend",
+            "email": "mtownsend5512@gmail.com",
+            "role": "Developer"
+        }
+    ],
+	"autoload": {
+        "psr-4": {
+            "Mtownsend\\Progress\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {
+        "php": "~7.4|~8.0",
+        "beberlei/assert": "^3.0"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "^6.4"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mtownsend\\Progress\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+            "Mtownsend\\Progress\\Providers\\ProgressServiceProvider"
+        ]
+      }
+    },
+    "minimum-stability": "stable"
+}
