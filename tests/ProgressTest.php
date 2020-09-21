@@ -25,7 +25,7 @@ class ProgressTest extends TestCase
     public function progress_can_receive_single_step()
     {
         $result = new Progress((new Step(31, 'Age'))->integer());
-        $this->assertEquals($result->get()['steps_completed'], 1);
+        $this->assertEquals($result->get()['steps_complete'], 1);
     }
 
     /** @test */
@@ -35,7 +35,7 @@ class ProgressTest extends TestCase
             (new Step(31, 'Age'))->integer(),
             (new Step('John Smith', 'Name'))->string()->notEmpty()
         );
-        $this->assertEquals($result->get()['steps_completed'], 2);
+        $this->assertEquals($result->get()['steps_complete'], 2);
     }
 
     /** @test */
@@ -47,7 +47,7 @@ class ProgressTest extends TestCase
             (new Step(true, 'Premier Member'))->boolean(),
         ];
         $result = new Progress($steps);
-        $this->assertEquals($result->get()['steps_completed'], 3);
+        $this->assertEquals($result->get()['steps_complete'], 3);
     }
 
     /** @test */
@@ -82,7 +82,7 @@ class ProgressTest extends TestCase
         $progress = new Progress($steps);
         $progress->get();
 
-        $this->assertEquals($progress->steps_completed, 3);
+        $this->assertEquals($progress->steps_complete, 3);
     }
 
     /** @test */
@@ -104,7 +104,7 @@ class ProgressTest extends TestCase
             (new Step(null, 'List Your First Item For Sale'))->notEmpty()->integer(),
         ];
         $result = (new Progress($steps))->toJson();
-        $json = '{"total_steps":5,"percentage_complete":60,"percentage_incomplete":40,"steps_completed":3,"steps_incomplete":2,"complete_step_names":["Age","Confirmed Email","Connect Your Facebook"],"incomplete_step_names":{"3":"Connect Your PayPal","4":"List Your First Item For Sale"}}';
+        $json = '{"total_steps":5,"percentage_complete":60,"percentage_incomplete":40,"steps_complete":3,"steps_incomplete":2,"complete_step_names":["Age","Confirmed Email","Connect Your Facebook"],"incomplete_step_names":{"3":"Connect Your PayPal","4":"List Your First Item For Sale"}}';
 
         $this->assertEquals($result, $json);
     }

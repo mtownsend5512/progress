@@ -111,7 +111,7 @@ class Progress
             'total_steps' => $this->countSteps(),
             'percentage_complete' => $this->percentageComplete(),
             'percentage_incomplete' => max(100 - $this->percentageComplete(), 0),
-            'steps_completed' => $this->countStepsPassed(),
+            'steps_complete' => $this->countStepsPassed(),
             'steps_incomplete' => $this->countSteps() - $this->countStepsPassed(),
             'complete_step_names' => $this->passedStepNames(),
             'incomplete_step_names' => $this->failedStepNames()
