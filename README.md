@@ -137,7 +137,7 @@ $progress->get();
   "total_steps" => 3
   "percentage_complete" => 100.0
   "percentage_incomplete" => 0.0
-  "steps_completed" => 3
+  "steps_complete" => 3
   "steps_incomplete" => 0
   "complete_step_names" => [
     0 => "Answer To Everything"
